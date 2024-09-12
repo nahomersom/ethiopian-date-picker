@@ -1,0 +1,58 @@
+/* ethiopian-datepicker.component.css
+.datepicker-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .datepicker-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+  }
+  
+  .calendar-icon {
+    margin-left: 5px;
+  }
+  
+  .calendar-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+   */
+   div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calendar-input{
+    display: flex;
+    border: 0.5px solid;
+    padding: 5px;
+    border-radius: 10px;
+}
+.calendar-input input,
+.calendar-input input:focus,
+.calendar-input input:active {
+    background: transparent;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none; /* Removes any shadow that might be added on focus */
+    padding: 0; /* Adjust padding if necessary */
+    margin: 0; /* Adjust margin if necessary */
+}
+
+.calendar-icon{
+    color: #5554548a;
+    align-self: center;
+    display: flex;
+}
