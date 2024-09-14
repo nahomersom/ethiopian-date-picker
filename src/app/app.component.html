@@ -4,9 +4,9 @@
   <button mat-icon-button class="calendar-icon" (click)="toggleCalendar()">
     <mat-icon>calendar_today</mat-icon>
   </button>
-</div>
+</div> -->
 
-<div *ngIf="isCalendarOpen" class="calendar-container">
+<!-- <div *ngIf="isCalendarOpen" class="calendar-container">
   <ngb-datepicker #dp [(ngModel)]="model" [firstDayOfWeek]="7" [minDate]="minDate" (select)="onDateSelect($event)"></ngb-datepicker>
   <button class="btn btn-sm btn-outline-primary me-2" (click)="model = today">Select Today</button>
   <button class="btn btn-sm btn-outline-primary me-2" (click)="dp.navigateTo()">To current month</button>
@@ -19,12 +19,23 @@
   <pre>Model: {{ model | json }}</pre>
 </div> -->
 
-<div>
-  <span class="calendar-input">
-  <input>
-  <span class="calendar-icon" (click)="toggleCalendar()">
+<div class="container">
+  <div class="calendar-container">
 
-    <mat-icon>event</mat-icon>
-  </span>
-  </span>
+    <span class="calendar-input">
+    <input (focus)="toggleCalendar()"
+    placeholder={{placeholder}}
+    [value]="formattedDate" (blur)="onManualInput($event)">
+    <span class="calendar-icon" (click)="toggleCalendar()">
+  
+      <mat-icon>event</mat-icon>
+    </span>
+    </span>
+    <div *ngIf="isCalendarOpen" class="calendar">
+    <ngb-datepicker
+    [weekdays]="weekDays"
+    @calendarAnimation #dp [(ngModel)]="model" [firstDayOfWeek]="7" [minDate]="minDate" (dateSelect)="onDateSelect($event)"></ngb-datepicker>      
+      <pre>Model: {{ model | json }}</pre>
+    </div>
+  </div>
 </div>
